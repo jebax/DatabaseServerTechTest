@@ -9,8 +9,7 @@ let dataStorer = new storerExports.DataStorer()
 server.get('/set', (req, res) => {
   let params = url.parse(req.url, true).query
 
-  dataStorer.set(params)
-  res.send('Data stored successfully')
+  res.send(dataStorer.set(params))
 })
 
 server.get('/get', (req, res) => {

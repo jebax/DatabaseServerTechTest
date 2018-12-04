@@ -16,6 +16,10 @@ describe('Data Storer', () => {
       expect(dataStorer.storedData).toEqual(setParams)
     })
 
+    it('returns the key and value after it stores them', () => {
+      expect(dataStorer.set(setParams)).toEqual('testKey: testValue')
+    })
+
     it('retrieves the associated value from a given key', () => {
       dataStorer.set(setParams)
       expect(dataStorer.get(getParams)).toEqual(setParams.testKey)

@@ -22,6 +22,6 @@ describe('Storing and retrieving data', () => {
     let testValue = 'testValue'
 
     cy.request(`http://localhost:4000/set?${testKey}=${testValue}`)
-      .its('body').should('equal', 'Data stored successfully')
+      .its('body').should('equal', `${testKey}: ${testValue}`)
   })
 })
