@@ -11,7 +11,7 @@ app.get('/set', (req, res) => {
   let value = Object.values(request_query)[0]
 
   storedData[key] = value
-  res.send('')
+  res.send(`${key} stored successfully`)
 })
 
 app.get('/get', (req, res) => {

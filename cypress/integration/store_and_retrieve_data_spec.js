@@ -16,4 +16,12 @@ describe('Storing and retrieving data', () => {
     cy.request(`http://localhost:3000/get?key=${testKey}`)
       .its('body').should('equal', testValue)
   })
+
+  it('confirms when data is stored', () => {
+    let testKey = 'testKey'
+    let testValue = 'testValue'
+
+    cy.request(`http://localhost:3000/set?${testKey}=${testValue}`)
+      .its('body').should('equal', `${testKey} stored successfully`)
+  })
 })
