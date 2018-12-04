@@ -3,8 +3,8 @@ describe('Storing and retrieving data', () => {
     let testKey = 'testKey'
     let testValue = 'testValue'
 
-    cy.request(`http://localhost:3000/set?${testKey}=${testValue}`)
-    cy.request(`http://localhost:3000/get?key=${testKey}`)
+    cy.request(`http://localhost:4000/set?${testKey}=${testValue}`)
+    cy.request(`http://localhost:4000/get?key=${testKey}`)
       .its('body').should('equal', testValue)
   })
 
@@ -12,8 +12,8 @@ describe('Storing and retrieving data', () => {
     let testKey = 'testKey2'
     let testValue = 'testValue2'
 
-    cy.request(`http://localhost:3000/set?${testKey}=${testValue}`)
-    cy.request(`http://localhost:3000/get?key=${testKey}`)
+    cy.request(`http://localhost:4000/set?${testKey}=${testValue}`)
+    cy.request(`http://localhost:4000/get?key=${testKey}`)
       .its('body').should('equal', testValue)
   })
 
@@ -21,7 +21,7 @@ describe('Storing and retrieving data', () => {
     let testKey = 'testKey'
     let testValue = 'testValue'
 
-    cy.request(`http://localhost:3000/set?${testKey}=${testValue}`)
+    cy.request(`http://localhost:4000/set?${testKey}=${testValue}`)
       .its('body').should('equal', 'Data stored successfully')
   })
 })
