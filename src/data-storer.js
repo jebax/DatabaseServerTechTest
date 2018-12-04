@@ -6,8 +6,14 @@ class DataStorer {
   set(params) {
     let key = Object.keys(params)[0]
     let value = Object.values(params)[0]
-    
+
     this.storedData[key] = value
+  }
+
+  get(params) {
+    let key = Object.values(params)[0]
+
+    return this.storedData[key]
   }
 }
 
