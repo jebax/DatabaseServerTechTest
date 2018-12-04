@@ -6,17 +6,17 @@ const port = 3000
 let storedData = {}
 
 app.get('/set', (req, res) => {
-  let request_query = url.parse(req.url, true).query
-  let key = Object.keys(request_query)[0]
-  let value = Object.values(request_query)[0]
+  let params = url.parse(req.url, true).query
+  let key = Object.keys(params)[0]
+  let value = Object.values(params)[0]
 
   storedData[key] = value
   res.send(`${key} stored successfully`)
 })
 
 app.get('/get', (req, res) => {
-  let request_query = url.parse(req.url, true).query
-  let key = Object.values(request_query)[0]
+  let params = url.parse(req.url, true).query
+  let key = Object.values(params)[0]
 
   res.send(storedData[key])
 })
