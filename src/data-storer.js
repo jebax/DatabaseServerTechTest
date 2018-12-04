@@ -17,4 +17,4 @@ class DataStorer {
   }
 }
 
-module.exports = DataStorer
+module.exports = { DataStorer: DataStorer }

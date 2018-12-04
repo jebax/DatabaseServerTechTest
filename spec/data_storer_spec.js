@@ -1,11 +1,11 @@
 describe('Data Storer', () => {
-  const DataStorer = require('../src/data-storer.js')
+  const storerExports = require('../src/data-storer.js')
   let dataStorer
   let setParams
   let getParams
 
   beforeEach(() => {
-    dataStorer = new DataStorer()
+    dataStorer = new storerExports.DataStorer()
     setParams = { testKey: 'testValue' }
     getParams = { key: 'testKey' }
   })
