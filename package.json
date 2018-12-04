@@ -2,7 +2,7 @@
   "name": "database-server-tech-test",
   "version": "1.0.0",
   "description": "My attempt at the database server tech test, using Express.js and Node.js.",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "jasmine",
     "cypress:open": "cypress open"
