@@ -2,9 +2,9 @@ const express = require('express')
 const url = require('url')
 const app = express()
 const port = 4000
-const dataStorerClass = require('./data-storer.js')
+const DataStorerClass = require('./data-storer.js')
 
-let dataStorer = new dataStorerClass()
+let dataStorer = new DataStorerClass()
 
 app.get('/set', (req, res) => {
   let params = url.parse(req.url, true).query

@@ -1,16 +1,16 @@
 class DataStorer {
-  constructor() {
+  constructor () {
     this.storedData = {}
   }
 
-  set(params) {
+  set (params) {
     let key = Object.keys(params)[0]
     let value = Object.values(params)[0]
 
     this.storedData[key] = value
   }
 
-  get(params) {
+  get (params) {
     let key = Object.values(params)[0]
 
     return this.storedData[key]
