@@ -3,9 +3,8 @@ describe('Storing and retrieving data', () => {
     let testKey = 'testKey'
     let testValue = 'testValue'
 
-    cy.visit(`http://localhost:3000/set?${testKey}=${testValue}`)
-    cy.visit(`http://localhost:3000/get?key=${testKey}`)
-
-    cy.contains(testValue)
+    cy.request(`http://localhost:3000/set?${testKey}=${testValue}`)
+    cy.request(`http://localhost:3000/get?key=${testKey}`)
+      .its('body').should('equal', testValue)
   })
 })
