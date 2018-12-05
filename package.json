@@ -4,6 +4,7 @@
   "description": "My attempt at the database server tech test, using Express.js and Node.js.",
   "main": "server.js",
   "scripts": {
+    "start": "node src/server.js",
     "test": "jasmine",
     "cypress:open": "cypress open"
   },
