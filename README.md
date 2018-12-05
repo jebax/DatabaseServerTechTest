@@ -11,6 +11,8 @@ My app is formed of two components: the `server.js` and the `DataStorer`. The `s
 
 When the user stores a key/value pair at `/set`, they will get the pair back in the response. When they retrieve a value with `/get`, the response will be the value associated with the specified key.
 
+My code could be easily extended to account for a database: if required, I could use MongoDB's Node.js driver, and execute its `insertOne` and `find` methods inside my `DataStorer`'s `set` and `get` methods. My code would hardly have to be changed to add this functionality.
+
 ## How to use the app
 
 - Clone the repository
