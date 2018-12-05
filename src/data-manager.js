@@ -14,7 +14,7 @@ class DataManager {
   get (params) {
     let key = Object.values(params)[0]
 
-    return this.storedData[key]
+    return this.dataStore.read(key)
   }
 }
 

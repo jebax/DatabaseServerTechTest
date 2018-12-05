@@ -22,8 +22,8 @@ describe('Data Manager', () => {
       expect(dataManager.set(setParams)).toEqual('testKey: testValue')
     })
 
-    xit('retrieves the associated value from a given key', () => {
-      dataManager.set(setParams)
+    it('reads the associated value from data store when given a key', () => {
+      dataStore.read.and.returnValue(setParams.testKey)
       expect(dataManager.get(getParams)).toEqual(setParams.testKey)
     })
   })
