@@ -1,13 +1,13 @@
 class DataManager {
-  constructor () {
-    this.storedData = {}
+  constructor (dataStore) {
+    this.dataStore = dataStore
   }
 
   set (params) {
     let key = Object.keys(params)[0]
     let value = Object.values(params)[0]
 
-    this.storedData[key] = value
+    this.dataStore.write(key, value)
     return `${key}: ${value}`
   }
 
