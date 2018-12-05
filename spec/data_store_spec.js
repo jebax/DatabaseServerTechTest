@@ -15,5 +15,10 @@ describe('Data Store', () => {
       dataStore.write(testKey, testValue)
       expect(dataStore.data).toEqual({ testKey: 'testValue' })
     })
+
+    it('reads a value from its storage when given the related key', () => {
+      dataStore.write(testKey, testValue)
+      expect(dataStore.read(testKey)).toEqual(testValue)
+    })
   })
 })
