@@ -1,4 +1,4 @@
-class DataStorer {
+class DataManager {
   constructor () {
     this.storedData = {}
   }
@@ -18,4 +18,4 @@ class DataStorer {
   }
 }
 
-module.exports = { DataStorer: DataStorer }
+module.exports = { DataManager: DataManager }

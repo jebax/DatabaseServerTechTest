@@ -7,11 +7,11 @@ My attempt at the database server tech test, using Node.js and Express.js to ser
 ## My approach
 I decided to use Node.js and its Express package for this tech test. Express is suitably lightweight, allowing for clean and concise code, and integrates perfectly with other Node modules for parsing URLs, for example (as I used in this project). I decided to use Cypress for end-to-end feature testing, because it's fast, reliable, and easy to use. While this means feature and unit tests have to be run separately, I believe that I used the right tools for each job. I used ESLint to lint my code and Istanbul for code coverage reports (100% coverage currently).
 
-My app is formed of two components: the `server.js` and the `DataStorer`. The `server` contains the Express routing for `/set` and `/get` requests; it parses the URL to extract the query params, and passes the params into an instance of the `DataStorer`. The `DataStorer` is a class with `set` and `get` methods, each of which interacts with the `this.storedData` object to store or retrieve data.
+My app is formed of two components: the `server.js` and the `DataManager`. The `server` contains the Express routing for `/set` and `/get` requests; it parses the URL to extract the query params, and passes the params into an instance of the `DataManager`. The `DataManager` is a class with `set` and `get` methods, each of which interacts with the `this.storedData` object to store or retrieve data.
 
 When the user stores a key/value pair at `/set`, they will get the pair back in the response. When they retrieve a value with `/get`, the response will be the value associated with the specified key.
 
-My code could be easily extended to account for a database: if required, I could use MongoDB's Node.js driver, and execute its `insertOne` and `find` methods inside my `DataStorer`'s `set` and `get` methods. My code would hardly have to be changed to add this functionality.
+My code could be easily extended to account for a database: if required, I could use MongoDB's Node.js driver, and execute its `insertOne` and `find` methods inside my `DataManager`'s `set` and `get` methods to store and retrieve the relevant data.
 
 ## How to use the app
 

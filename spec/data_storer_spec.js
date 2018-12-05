@@ -1,28 +1,28 @@
-describe('Data Storer', () => {
-  const storerExports = require('../src/data-storer.js')
-  let dataStorer
+describe('Data Manager', () => {
+  const managerExports = require('../src/data-Manager.js')
+  let dataManager
   let setParams
   let getParams
 
   beforeEach(() => {
-    dataStorer = new storerExports.DataStorer()
+    dataManager = new managerExports.DataManager()
     setParams = { testKey: 'testValue' }
     getParams = { key: 'testKey' }
   })
 
-  describe('A data storer', () => {
+  describe('A data Manager', () => {
     it('stores a key and its associated value', () => {
-      dataStorer.set(setParams)
-      expect(dataStorer.storedData).toEqual(setParams)
+      dataManager.set(setParams)
+      expect(dataManager.storedData).toEqual(setParams)
     })
 
     it('returns the key and value after it stores them', () => {
-      expect(dataStorer.set(setParams)).toEqual('testKey: testValue')
+      expect(dataManager.set(setParams)).toEqual('testKey: testValue')
     })
 
     it('retrieves the associated value from a given key', () => {
-      dataStorer.set(setParams)
-      expect(dataStorer.get(getParams)).toEqual(setParams.testKey)
+      dataManager.set(setParams)
+      expect(dataManager.get(getParams)).toEqual(setParams.testKey)
     })
   })
 })
